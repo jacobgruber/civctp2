@@ -131,7 +131,7 @@
 #include "aui.h"
 #endif
 
-#if defined(__linux__)
+#if defined(__linux__) || defined(__BSD)
 // try to handle Case insisentive stuff globaly here
 #include "cifm.h"
 #define fopen(a, b) ci_fopen(a, b)

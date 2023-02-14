@@ -4,18 +4,19 @@
 #ifdef _DEBUG
 
 #ifndef Assert
+
 #if defined(WIN32)
 #include <crtdbg.h>
-#endif
 #define Assert(x) _ASSERTE(x)
 #endif
 
-#else
+#endif
+
+#endif
 
 #ifndef Assert
 #define Assert(x) (void)0
-#endif
-
+#define _ASSERTE(x) (void)0
 #endif
 
 #endif

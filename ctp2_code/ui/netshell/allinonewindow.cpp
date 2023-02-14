@@ -115,7 +115,7 @@ DialogBoxWindow *g_exclusionsWindow = NULL;
 
 
 
-#ifdef LINUX
+#if defined(LINUX) || defined(__BSD)
 #include <unistd.h>
 #endif
 

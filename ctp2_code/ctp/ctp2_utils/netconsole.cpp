@@ -30,7 +30,7 @@
 #include "c3cmdline.h"
 #if defined(WIN32)
 #include <winsock.h>
-#elif defined(LINUX)
+#elif defined(LINUX) || defined(__BSD)
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <sys/socket.h>

@@ -61,7 +61,7 @@
 #include "log_off.h"
 #endif
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__BSD)
 #include <execinfo.h>
 #include <dlfcn.h>
 #include "civ3_main.h"
