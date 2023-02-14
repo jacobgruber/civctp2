@@ -88,8 +88,6 @@ class CityData;
 class BuildingBuildListRecord;
 class BuildListSequenceRecord;
 class WonderBuildListRecord;
-class StrategyRecord::PopAssignmentElement;
-class StrategyRecord::BuildListSequenceElement;
 class UnitBuildListRecord;
 class SlicContext;
 
