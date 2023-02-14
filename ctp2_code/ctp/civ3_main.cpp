@@ -1827,9 +1827,9 @@ int SDLMessageHandler(const SDL_Event &event)
 			Uint16 mod = event.key.keysym.mod;
 			WPARAM wp = '\0';
 			switch (key) {
-#define SDLKCONV(sdl_name, char) \
+#define SDLKCONV(sdl_name, character) \
 			case (sdl_name): \
-				wp = (char); \
+				wp = (character); \
 				break;
 #define SDLKCONVSHIFT(sdl_name, charWoShift, charWShift) \
 			case (sdl_name): \
@@ -1873,7 +1873,7 @@ int SDLMessageHandler(const SDL_Event &event)
 			SDLKCONVSHIFT(SDLK_BACKSLASH, '\\', '|');
 			SDLKCONV(SDLK_CARET, '^');
 			SDLKCONV(SDLK_UNDERSCORE, '_');
-			SDLKCONVSHIFT(SDLK_BACKQUOTE, '`', '¬');
+			SDLKCONVSHIFT(SDLK_BACKQUOTE, '`', U'¬');
 			SDLKCONV(SDLK_UP, SDLK_UP + 256);
 			SDLKCONV(SDLK_DOWN, SDLK_DOWN + 256);
 			SDLKCONV(SDLK_LEFT, SDLK_LEFT + 256);
@@ -1914,7 +1914,7 @@ int SDLMessageHandler(const SDL_Event &event)
 			SDLKCONV(SDLK_KP_EQUALS, '=');
 			SDLKCONVSHIFT(SDLK_1, '1', '!');
 			SDLKCONVSHIFT(SDLK_2, '2', '"');
-			SDLKCONVSHIFT(SDLK_3, '3', '£');
+			SDLKCONVSHIFT(SDLK_3, '3', U'£');
 			SDLKCONVSHIFT(SDLK_4, '4', '$');
 			SDLKCONVSHIFT(SDLK_5, '5', '%');
 			SDLKCONVSHIFT(SDLK_6, '6', '^');
