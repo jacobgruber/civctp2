@@ -116,7 +116,7 @@ FILE* c3files_fopen(C3DIR dirID, MBCHAR const * s1, MBCHAR const * s2, bool chec
 
 FILE* c3files_freopen(const MBCHAR *s1, const MBCHAR *s2, FILE *file)
 {
-#ifdef __linux__
+#if defined(__linux__) || defined(__BSD__)
 	return freopen(CI_FixName(s1), s2, file);
 #else
 	return freopen(s1, s2, file);

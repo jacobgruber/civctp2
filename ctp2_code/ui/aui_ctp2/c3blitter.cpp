@@ -374,8 +374,8 @@ AUI_ERRCODE C3Blitter::Blt16To16FastMMX(
 	   					rep movsw
 					}
 #else // _MSCVER
-//					Assert(0);
-                    //fprintf(stderr, "%s L%d: Using Blt16To16FastMMX!\n", __FILE__, __LINE__);
+					Assert(0);
+/*                    //fprintf(stderr, "%s L%d: Using Blt16To16FastMMX!\n", __FILE__, __LINE__);
                     __asm__ (
                         //"movl $scanWidth, %eax       \n\t"
                         //"movl $srcBuf, %esi          \n\t"
@@ -406,6 +406,7 @@ AUI_ERRCODE C3Blitter::Blt16To16FastMMX(
                         : "a" (scanWidth), "S" (srcBuf), "D" (destBuf)
                         : "%edx", "%ecx", "cc"
                         );
+*/
 #endif // _MSC_VER
 				} while ( (srcBuf += srcPitch) != stop );
 			}
@@ -622,7 +623,7 @@ AUI_ERRCODE C3Blitter::Blt16To16FastFPU(
 
 bool C3Blitter::CheckMMXTechnology(void)
 {
-#ifdef __linux__
+#if defined(__linux__) || defined(__BSD__)
 	return false;
 #else
     bool retval = true;

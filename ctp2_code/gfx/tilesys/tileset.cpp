@@ -61,7 +61,7 @@
 #include <sys/types.h>
 #endif
 #include <fcntl.h>
-#if defined(LINUX) || defined(__BSD)
+#if defined(LINUX) || defined(__BSD__)
 #include <sys/mman.h>
 #endif
 

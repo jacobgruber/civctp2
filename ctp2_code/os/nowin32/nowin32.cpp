@@ -79,7 +79,7 @@ char* _fullpath(char* absolute, const char* relative, size_t bufsize)
 				return NULL;
 			}
 		}
-#elif defined(BSD) || defined(__USE_BSD)
+#elif defined(__BSD__)
 		char rlpath[PATH_MAX] = {0};
 		char *abs = realpath(CI_FixName(relative), rlpath);
 		if(abs)
