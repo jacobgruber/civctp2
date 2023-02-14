@@ -189,7 +189,7 @@ void Sprite::ImportTGA(uint16 index, char **imageFiles,Pixel32 **imageData, size
 	{
 		printf("Bad TGA Sprite File(%s)\n",imageFiles[index]);
 		*imageData = NULL;
-		fcloseall();
+		// fcloseall();
 		exit(0);
 		return;
 	}
@@ -198,7 +198,7 @@ void Sprite::ImportTGA(uint16 index, char **imageFiles,Pixel32 **imageData, size
 	{
 		printf("TGA Sprite File not 32-bits(%s)\n",imageFiles[index]);
 		*imageData=NULL;
-		fcloseall();
+		// fcloseall();
 		exit(0);
 		return;
 	}
@@ -271,7 +271,7 @@ void Sprite::Import(size_t nframes, char **imageFiles, char **shadowFiles)
 			else
 			{
 				printf("Unknown image file \"%s\"\n",imageFiles[i]);
-				fcloseall();
+				// fcloseall();
 				exit(-1);
 			}
 
