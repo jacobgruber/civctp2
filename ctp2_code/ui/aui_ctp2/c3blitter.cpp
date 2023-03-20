@@ -53,7 +53,7 @@ AUI_ERRCODE C3Blitter::Blt16To16(
 	RECT *srcRect,
 	uint32 flags )
 {
-#ifndef __linux__
+#if !defined(__linux__) && !defined(__BSD__)
 	if ((flags & k_AUI_BLITTER_FLAG_FAST))
 	{
 
