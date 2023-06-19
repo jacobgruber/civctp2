@@ -1162,6 +1162,7 @@ void ParseCommandLine(PSTR szCmdLine)
 	g_runSpriteEditor = (NULL != strstr(szCmdLine, "runspriteeditor"));
 
 #if defined(__AUI_USE_SDL__)
+  g_SDL_flags = g_SDL_flags | SDL_WINDOW_SHOWN;
 	if (strstr(szCmdLine, "fullscreen")) {
         g_SDL_flags = g_SDL_flags | SDL_WINDOW_FULLSCREEN_DESKTOP;
     }

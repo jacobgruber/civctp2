@@ -3,6 +3,7 @@
 #
 
 CTP2_LDFLAGS = \
+	-sectcreate __TEXT __info_plist /Users/jacob/source/civctp2/Info.plist \
 	$(DIRECTX_LDFLAGS) \
 	$(DXMEDIA_LDFLAGS) \
 	$(SDL_LDFLAGS) \

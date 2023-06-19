@@ -1254,7 +1254,7 @@ sint32 CivApp::InitializeApp(HINSTANCE hInstance, int iCmdShow)
 #if defined(_DEBUG) || defined(DEBUG)
         flags |= SDL_INIT_NOPARACHUTE;
 #endif// _DEBUG || DEBUG
-        int rc = SDL_Init(flags);
+        int rc = SDL_Init(flags | SDL_INIT_EVERYTHING);
         if (rc != 0) {
                 fprintf(stderr, "Could not initialize SDL:\n%s\n", SDL_GetError());
                 return -1;

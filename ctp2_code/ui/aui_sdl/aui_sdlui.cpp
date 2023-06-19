@@ -134,13 +134,14 @@ AUI_ERRCODE aui_SDLUI::DestroyNativeScreen(void)
 
 AUI_ERRCODE aui_SDLUI::CreateNativeScreen( BOOL useExclusiveMode )
 {
+  SDL_SetHint(SDL_HINT_RENDER_DRIVER, "opengl");
 	AUI_ERRCODE errcode = aui_SDL::InitCommon( useExclusiveMode );
 	Assert( AUI_SUCCESS(errcode) );
 	if ( !AUI_SUCCESS(errcode) ) return errcode;
 
 	m_pixelFormat = aui_Surface::TransformBppToSurfacePixelFormat(m_bpp);
 	m_SDLWindow = SDL_CreateWindow("Call To Power 2", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-		m_width, m_height, g_SDL_flags);
+		m_width, m_height, g_SDL_flags | SDL_WINDOW_ALLOW_HIGHDPI);
 	if (!m_SDLWindow) {
 		c3errors_FatalDialog("aui_SDLUI", "SDL window creation failed:\n%s\n", SDL_GetError());
 	}
