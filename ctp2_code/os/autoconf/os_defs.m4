@@ -17,9 +17,20 @@ AC_DEFUN([AC_OS_DEFINES],[
 	 AC_DEFINE(__USE_GNU,1,[Use GNU extensions of glibc])
 	 CTP2_NOWIN32_INC='-I$(ctp2_code)/os/nowin32'
          ac_OpSystem="LINUX"
+         ;;
+      *-apple*)
+         AC_DEFINE(MACOS,1,[Define to 1 if you are compiling on MACOS])
+         AC_DEFINE(__BSD__,1,[Define to 1 if you are compiling on BSD])
+	 CTP2_NOWIN32_INC='-I$(ctp2_code)/os/nowin32'
+         ac_OpSystem="MACOS"
+         ;;
+      *)
+         AC_MSG_ERROR(["OS $host_os is not supported"])
+         ;;
    esac
 
    AC_SUBST(CTP2_NOWIN32_INC)
    AM_CONDITIONAL(WIN32, test x$ac_OpSystem = xWIN32)
    AM_CONDITIONAL(LINUX, test x$ac_OpSystem = xLINUX)
+   AM_CONDITIONAL(MACOS, test x$ac_OpSystem = xMACOS)
 ])
