@@ -482,7 +482,7 @@ int ui_Initialize(void)
 	}
 	strcat(s, FILE_SEP "fonts");
 	g_c3ui->AddBitmapFontSearchPath(s);
-#elif defined(HAVE_X11)
+#elif defined(HAVE_X11) && !defined(MACOS)
 	Display *display = g_c3ui->getDisplay();
 	int ndirs;
 	bool noPath = true;

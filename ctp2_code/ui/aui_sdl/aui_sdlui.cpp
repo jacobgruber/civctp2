@@ -99,7 +99,7 @@ aui_SDLUI::aui_SDLUI
 	Assert( AUI_SUCCESS(*retval) );
 	if ( !AUI_SUCCESS(*retval) ) return;*/
 
-#if defined(HAVE_X11)
+#if defined(HAVE_X11) && !defined(MACOS)
 	char *dispname = getenv("DISPLAY");
 	if (dispname) {
 		m_X11Display = XOpenDisplay(dispname);
@@ -171,7 +171,7 @@ AUI_ERRCODE aui_SDLUI::CreateNativeScreen( BOOL useExclusiveMode )
 	return AUI_ERRCODE_OK;
 }
 
-#ifdef HAVE_X11
+#if defined(HAVE_X11) && !defined(MACOS)
 Display *
 aui_SDLUI::getDisplay()
 {
@@ -181,7 +181,7 @@ aui_SDLUI::getDisplay()
 
 aui_SDLUI::~aui_SDLUI( void )
 {
-#ifdef HAVE_X11
+#if defined(HAVE_X11) && !defined(MACOS)
 	if (m_X11Display) {
 		XCloseDisplay(m_X11Display);
 		m_X11Display = 0;
