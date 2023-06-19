@@ -1683,7 +1683,6 @@ int WINAPI CivMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 		uint32 frameStartTick = GetTickCount();
 		g_civApp->Process();
 
-		//fprintf(stderr, "%s L%d: g_civApp->Process() done!\n", __FILE__, __LINE__);
 
 #ifdef __AUI_USE_SDL__
 		SDL_Event event;
